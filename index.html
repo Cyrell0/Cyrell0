@@ -1,0 +1,408 @@
+<!DOCTYPE html>
+<html lang="fr" class="scroll-smooth">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Portfolio professionnel - Développeur Web Créatif pour PME">
+<title>Créateur Digital | Portfolio 3D</title>
+<script src="https://cdn.tailwindcss.com"></script>
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&family=Space+Mono:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+<script>
+tailwind.config = {
+theme: {
+extend: {
+fontFamily: {
+sans: ['Outfit', 'sans-serif'],
+mono: ['"Space Mono"', 'monospace']
+},
+colors: {
+cyber: {
+dark: '#03000a',
+pink: '#ff007f',
+cyan: '#00f3ff',
+purple: '#8a2be2',
+blue: '#0044ff'
+}
+},
+backgroundImage: {
+'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
+'cyber-gradient': 'linear-gradient(135deg, #ff007f, #8a2be2, #00f3ff)'
+}
+}
+}
+}
+</script>
+<link rel="stylesheet" href="style.css">
+</head>
+<body class="antialiased selection:bg-cyber-pink selection:text-white relative">
+
+<div id="canvas-container"></div>
+
+<nav class="fixed w-full z-50 glass-panel border-b-0 transition-all duration-300">
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+<div class="flex items-center justify-between h-24">
+<div class="flex-shrink-0 group">
+<a href="#" class="font-mono text-2xl font-bold tracking-tighter flex items-center gap-2">
+<div class="w-8 h-8 rounded bg-cyber-gradient flex items-center justify-center text-white text-sm group-hover:rotate-180 transition-transform duration-500">
+<i class="fas fa-code"></i>
+</div>
+<span class="text-white">P<span class="text-cyber-cyan">O</span>RTF<span class="text-cyber-pink">O</span>LIO</span>
+</a>
+</div>
+<div class="hidden md:block">
+<div class="ml-10 flex items-center space-x-10">
+<a href="#about" class="text-gray-300 hover:text-white transition-colors duration-300 font-mono text-xs tracking-widest uppercase relative after:content-[''] after:absolute after:-bottom-2 after:left-0 after:w-0 after:h-0.5 after:bg-cyber-pink hover:after:w-full after:transition-all after:duration-300">Mon Parcours</a>
+<a href="#skills" class="text-gray-300 hover:text-white transition-colors duration-300 font-mono text-xs tracking-widest uppercase relative after:content-[''] after:absolute after:-bottom-2 after:left-0 after:w-0 after:h-0.5 after:bg-cyber-purple hover:after:w-full after:transition-all after:duration-300">Expertise</a>
+<a href="#projects" class="text-gray-300 hover:text-white transition-colors duration-300 font-mono text-xs tracking-widest uppercase relative after:content-[''] after:absolute after:-bottom-2 after:left-0 after:w-0 after:h-0.5 after:bg-cyber-cyan hover:after:w-full after:transition-all after:duration-300">Réalisations</a>
+<a href="#contact" class="btn-cyber !py-3 !px-6 !text-xs">Démarrer un projet</a>
+</div>
+</div>
+</div>
+</div>
+</nav>
+
+<section id="hero" class="min-h-screen flex items-center justify-center relative pt-20 overflow-hidden">
+<div class="absolute inset-0 bg-gradient-radial from-transparent to-cyber-dark opacity-80 z-0"></div>
+<div class="text-center z-10 px-4 max-w-5xl mx-auto w-full">
+<h1 class="text-5xl md:text-7xl lg:text-8xl font-extrabold mb-6 leading-tight">
+Des Interfaces Sur-Mesure.<br>
+<span class="text-gradient">Une IA Qui Anticipe Vos Ventes.</span>
+</h1>
+<div class="h-16 mb-8 flex justify-center items-center">
+<span class="text-xl md:text-3xl font-mono text-gray-300 mr-2">></span>
+<p id="typewriter" class="text-xl md:text-3xl font-mono text-white"></p>
+<span class="w-3 h-8 bg-cyber-pink ml-1 animate-pulse"></span>
+</div>
+<p class="text-gray-400 max-w-2xl mx-auto mb-12 text-lg md:text-xl font-light leading-relaxed">
+Forgé par la pédagogie par projets, j'explore l'architecture web et les algorithmes. Découvrez à travers ce portfolio mes expérimentations techniques, ma capacité à résoudre des problèmes complexes et ma vision du développement Front-End.
+</p>
+<div class="flex flex-col sm:flex-row justify-center gap-6">
+<a href="#projects" class="btn-cyber">
+<i class="fas fa-rocket mr-3"></i> Explorer le portfolio
+</a>
+<a href="#about" class="flex items-center justify-center px-8 py-4 text-white hover:text-cyber-cyan transition-colors duration-300 font-mono uppercase tracking-widest text-sm relative group">
+<span class="relative z-10">Découvrir ma méthode</span>
+<div class="absolute inset-0 border border-gray-700 rounded-lg group-hover:border-cyber-cyan transition-colors"></div>
+</a>
+</div>
+</div>
+<div class="absolute bottom-10 left-1/2 transform -translate-x-1/2 animate-bounce z-10">
+<a href="#about" class="text-gray-500 hover:text-white transition-colors">
+<i class="fas fa-chevron-down text-2xl"></i>
+</a>
+</div>
+</section>
+
+<section id="about" class="py-32 relative">
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+<div class="flex items-center gap-4 mb-16 reveal">
+<div class="w-16 h-1 bg-gradient-to-r from-cyber-pink to-cyber-purple"></div>
+<h2 class="text-3xl md:text-5xl font-bold font-mono uppercase">L'Architecture <span class="text-transparent bg-clip-text bg-gradient-to-r from-cyber-purple to-cyber-cyan">Derrière Le Code</span></h2>
+</div>
+
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-16 items-center">
+<div class="lg:col-span-5 reveal">
+<div class="relative p-1 rounded-2xl bg-gradient-to-b from-cyber-pink via-cyber-purple to-cyber-cyan floating">
+<div class="bg-cyber-dark rounded-xl overflow-hidden relative">
+<img src="https://images.unsplash.com/photo-1542831371-29b0f74f9713?q=80&w=800&auto=format&fit=crop" alt="Image de programmation" class="w-full h-auto object-cover opacity-80 mix-blend-luminosity hover:mix-blend-normal transition-all duration-700">
+<div class="absolute inset-0 bg-gradient-to-t from-cyber-dark to-transparent"></div>
+<div class="absolute bottom-6 left-6 right-6">
+<div class="glass-panel p-4 rounded-lg flex items-center justify-between">
+<div>
+<p class="font-mono text-cyber-cyan font-bold">PROFIL ACTIF</p>
+<p class="text-xs text-gray-400">Île-de-France, FR</p>
+</div>
+<div class="w-12 h-12 rounded-full bg-cyber-pink/20 flex items-center justify-center text-cyber-pink">
+<i class="fas fa-check"></i>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="lg:col-span-7 reveal" style="transition-delay: 200ms;">
+<h3 class="text-2xl font-bold mb-6 text-white flex items-center">
+<i class="fas fa-terminal text-cyber-pink mr-3"></i> Biographie & Objectifs
+</h3>
+<p class="text-gray-300 mb-6 leading-relaxed text-lg font-light text-justify">
+Issu d'une formation exigeante basée sur l'apprentissage par la pratique (pédagogie active), j'ai développé une capacité d'adaptation et de résolution de problèmes hors du commun. Je ne me considère pas comme un simple "codeur", mais comme un créateur de solutions numériques.
+</p>
+<p class="text-gray-300 mb-8 leading-relaxed text-lg font-light text-justify">
+Mon approche est centrée sur le retour sur investissement de mes clients. Chaque ligne de code, chaque choix de couleur et chaque animation a pour but d'améliorer l'expérience utilisateur (UX) et de maximiser vos résultats commerciaux.
+</p>
+<div class="grid grid-cols-2 gap-4 mb-10">
+<div class="glass-card p-4 border-l-4 border-l-cyber-pink">
+<h4 class="font-bold text-white mb-1">UI / UX Design</h4>
+<p class="text-xs text-gray-400">Interfaces intuitives</p>
+</div>
+<div class="glass-card p-4 border-l-4 border-l-cyber-purple">
+<h4 class="font-bold text-white mb-1">Performance</h4>
+<p class="text-xs text-gray-400">Temps de charge optimal</p>
+</div>
+<div class="glass-card p-4 border-l-4 border-l-cyber-cyan">
+<h4 class="font-bold text-white mb-1">SEO Tech</h4>
+<p class="text-xs text-gray-400">Visibilité Google</p>
+</div>
+<div class="glass-card p-4 border-l-4 border-l-cyber-blue">
+<h4 class="font-bold text-white mb-1">Responsive</h4>
+<p class="text-xs text-gray-400">Mobile-first garanti</p>
+</div>
+</div>
+<a href="#" class="inline-flex items-center gap-3 text-white hover:text-cyber-cyan transition-colors group">
+<div class="w-10 h-10 rounded-full border border-gray-600 group-hover:border-cyber-cyan flex items-center justify-center">
+<i class="fas fa-file-pdf"></i>
+</div>
+<span class="font-mono uppercase tracking-widest text-sm underline-offset-8 group-hover:underline">Télécharger le CV complet</span>
+</a>
+</div>
+</div>
+</div>
+</section>
+
+<section id="skills" class="py-32 bg-black/40 relative border-y border-white/5 backdrop-blur-sm">
+<div class="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-cyber-purple to-transparent opacity-50"></div>
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+<div class="text-center mb-20 reveal">
+<h2 class="text-3xl md:text-5xl font-bold font-mono uppercase mb-4">Technologies <span class="text-gradient">Maîtrisées</span></h2>
+<p class="text-gray-400 max-w-2xl mx-auto">Un écosystème technique choisi pour allier esthétique, robustesse et rapidité de déploiement.</p>
+</div>
+
+<div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-7 gap-6 reveal">
+
+<div class="glass-card p-8 flex flex-col items-center justify-center group relative overflow-hidden">
+<div class="absolute inset-0 bg-gradient-to-b from-[#E34F26]/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+<i class="fab fa-html5 text-5xl text-gray-600 group-hover:text-[#E34F26] transition-colors duration-300 mb-4 relative z-10"></i>
+<span class="font-mono font-bold text-sm relative z-10">HTML5</span>
+</div>
+
+<div class="glass-card p-8 flex flex-col items-center justify-center group relative overflow-hidden" style="transition-delay: 100ms;">
+<div class="absolute inset-0 bg-gradient-to-b from-[#1572B6]/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+<i class="fab fa-css3-alt text-5xl text-gray-600 group-hover:text-[#1572B6] transition-colors duration-300 mb-4 relative z-10"></i>
+<span class="font-mono font-bold text-sm relative z-10">CSS3/BEM</span>
+</div>
+
+<div class="glass-card p-8 flex flex-col items-center justify-center group relative overflow-hidden" style="transition-delay: 200ms;">
+<div class="absolute inset-0 bg-gradient-to-b from-[#F7DF1E]/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+<i class="fab fa-js text-5xl text-gray-600 group-hover:text-[#F7DF1E] transition-colors duration-300 mb-4 relative z-10"></i>
+<span class="font-mono font-bold text-sm relative z-10">JavaScript</span>
+</div>
+
+<div class="glass-card p-8 flex flex-col items-center justify-center group relative overflow-hidden" style="transition-delay: 300ms;">
+<div class="absolute inset-0 bg-gradient-to-b from-[#61DAFB]/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+<i class="fab fa-react text-5xl text-gray-600 group-hover:text-[#61DAFB] transition-colors duration-300 mb-4 relative z-10"></i>
+<span class="font-mono font-bold text-sm relative z-10">React.js</span>
+</div>
+
+<div class="glass-card p-8 flex flex-col items-center justify-center group relative overflow-hidden" style="transition-delay: 400ms;">
+<div class="absolute inset-0 bg-gradient-to-b from-[#38B2AC]/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+<i class="fas fa-wind text-5xl text-gray-600 group-hover:text-[#38B2AC] transition-colors duration-300 mb-4 relative z-10"></i>
+<span class="font-mono font-bold text-sm relative z-10">Tailwind</span>
+</div>
+
+<div class="glass-card p-8 flex flex-col items-center justify-center group relative overflow-hidden" style="transition-delay: 500ms;">
+<div class="absolute inset-0 bg-gradient-to-b from-white/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+<i class="fas fa-cube text-5xl text-gray-600 group-hover:text-white transition-colors duration-300 mb-4 relative z-10"></i>
+<span class="font-mono font-bold text-sm relative z-10">Three.js</span>
+</div>
+
+<div class="glass-card p-8 flex flex-col items-center justify-center group relative overflow-hidden" style="transition-delay: 600ms;">
+<div class="absolute inset-0 bg-gradient-to-b from-[#3776AB]/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+<i class="fab fa-python text-5xl text-gray-600 group-hover:text-[#3776AB] transition-colors duration-300 mb-4 relative z-10"></i>
+<span class="font-mono font-bold text-sm relative z-10">Python</span>
+</div>
+
+</div>
+</div>
+</section>
+
+<section id="projects" class="py-32 relative">
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+<div class="flex items-center gap-4 mb-16 justify-end reveal">
+<h2 class="text-3xl md:text-5xl font-bold font-mono uppercase text-right">Solutions <span class="text-transparent bg-clip-text bg-gradient-to-l from-cyber-cyan to-cyber-blue">Déployées</span></h2>
+<div class="w-16 h-1 bg-gradient-to-l from-cyber-cyan to-cyber-blue"></div>
+</div>
+
+<div class="space-y-24">
+
+<div class="grid grid-cols-1 lg:grid-cols-2 gap-10 items-center reveal group">
+<div class="relative rounded-2xl overflow-hidden glass-card border-none order-2 lg:order-1 h-80 lg:h-96 w-full">
+<img src="https://images.unsplash.com/photo-1601598851547-4302969d0614?q=80&w=800&auto=format&fit=crop" alt="Artisan Menuisier" class="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-1000">
+<div class="absolute inset-0 bg-gradient-to-tr from-cyber-dark via-transparent to-cyber-pink/20 opacity-80 group-hover:opacity-50 transition-opacity duration-500"></div>
+<div class="absolute top-4 left-4 flex gap-2">
+<span class="px-3 py-1 bg-black/50 backdrop-blur-md rounded-full text-xs font-mono text-white border border-white/10">Artisanat / PME</span>
+</div>
+</div>
+<div class="order-1 lg:order-2 lg:pl-10">
+<h3 class="text-3xl font-bold mb-4 text-white group-hover:text-cyber-pink transition-colors">L'Atelier Dubois</h3>
+<p class="text-gray-400 mb-6 text-lg leading-relaxed">
+Site vitrine premium pour un artisan menuisier. L'objectif était de créer une interface élégante mettant en valeur le savoir-faire, tout en maximisant la génération de devis en ligne.
+</p>
+<ul class="space-y-2 mb-8 text-gray-300 font-mono text-sm">
+<li><i class="fas fa-check text-cyber-cyan mr-2"></i> Design rassurant et professionnel</li>
+<li><i class="fas fa-check text-cyber-cyan mr-2"></i> Parcours client optimisé</li>
+<li><i class="fas fa-check text-cyber-cyan mr-2"></i> Technologies : Tailwind CSS, JS</li>
+</ul>
+<a href="artisan.html" target="_blank" class="text-white font-bold border-b-2 border-cyber-pink pb-1 hover:text-cyber-pink transition-colors flex items-center inline-flex">
+Visiter la démo <i class="fas fa-external-link-alt ml-2"></i>
+</a>
+</div>
+</div>
+
+<div class="grid grid-cols-1 lg:grid-cols-2 gap-10 items-center reveal group">
+<div class="lg:pr-10 text-right">
+<h3 class="text-3xl font-bold mb-4 text-white group-hover:text-cyber-cyan transition-colors">L'Épicurien</h3>
+<p class="text-gray-400 mb-6 text-lg leading-relaxed">
+Expérience digitale immersive conçue pour un restaurant bistronomique. Mise en avant visuelle des plats, intégration claire de la carte et système de réservation fluide.
+</p>
+<ul class="space-y-2 mb-8 text-gray-300 font-mono text-sm inline-block text-left">
+<li><i class="fas fa-check text-cyber-purple mr-2"></i> Navigation intuitive et mobile-first</li>
+<li><i class="fas fa-check text-cyber-purple mr-2"></i> Menu dynamique et accessible</li>
+<li><i class="fas fa-check text-cyber-purple mr-2"></i> Formulaire de réservation rapide</li>
+</ul>
+<br>
+<a href="restaurant.html" target="_blank" class="text-white font-bold border-b-2 border-cyber-cyan pb-1 hover:text-cyber-cyan transition-colors flex items-center justify-end inline-flex">
+<i class="fas fa-external-link-alt mr-2"></i> Visiter la démo
+</a>
+</div>
+<div class="relative rounded-2xl overflow-hidden glass-card border-none h-80 lg:h-96 w-full">
+<img src="https://images.unsplash.com/photo-1514933651103-005eec06c04b?q=80&w=800&auto=format&fit=crop" alt="Restaurant Bistronomique" class="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-1000">
+<div class="absolute inset-0 bg-gradient-to-tl from-cyber-dark via-transparent to-cyber-cyan/20 opacity-80 group-hover:opacity-50 transition-opacity duration-500"></div>
+<div class="absolute top-4 right-4 flex gap-2">
+<span class="px-3 py-1 bg-black/50 backdrop-blur-md rounded-full text-xs font-mono text-white border border-white/10">Gastronomie</span>
+</div>
+</div>
+</div>
+
+<div class="grid grid-cols-1 lg:grid-cols-2 gap-10 items-center reveal group">
+<div class="relative rounded-2xl overflow-hidden glass-card border-none order-2 lg:order-1 h-80 lg:h-96 w-full">
+<img src="https://images.unsplash.com/photo-1585747860715-2ba37e788b70?q=80&w=800&auto=format&fit=crop" alt="Maison Barbier" class="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-1000">
+<div class="absolute inset-0 bg-gradient-to-tr from-cyber-dark via-transparent to-cyber-blue/20 opacity-80 group-hover:opacity-50 transition-opacity duration-500"></div>
+<div class="absolute top-4 left-4 flex gap-2">
+<span class="px-3 py-1 bg-black/50 backdrop-blur-md rounded-full text-xs font-mono text-white border border-white/10">Commerce Local</span>
+</div>
+</div>
+<div class="order-1 lg:order-2 lg:pl-10">
+<h3 class="text-3xl font-bold mb-4 text-white group-hover:text-cyber-blue transition-colors">Maison Barbier</h3>
+<p class="text-gray-400 mb-6 text-lg leading-relaxed">
+Vitrine à l'esthétique urbaine et affirmée pour un salon de coiffure masculin. Architecture de l'information pensée pour l'acquisition client et la prise de rendez-vous immédiate.
+</p>
+<ul class="space-y-2 mb-8 text-gray-300 font-mono text-sm">
+<li><i class="fas fa-check text-cyber-cyan mr-2"></i> Identité visuelle forte et contrastée</li>
+<li><i class="fas fa-check text-cyber-cyan mr-2"></i> Grille tarifaire claire et détaillée</li>
+<li><i class="fas fa-check text-cyber-cyan mr-2"></i> Boutons d'appel à l'action stratégiques</li>
+</ul>
+<a href="barber.html" target="_blank" class="text-white font-bold border-b-2 border-cyber-blue pb-1 hover:text-cyber-blue transition-colors flex items-center inline-flex">
+Visiter la démo <i class="fas fa-external-link-alt ml-2"></i>
+</a>
+</div>
+</div>
+
+</div>
+</div>
+</section>
+
+<section id="philosophy" class="py-24 relative overflow-hidden bg-black/60 backdrop-blur-xl border-t border-white/5">
+<div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center reveal relative z-10">
+<div class="w-16 h-16 mx-auto bg-gradient-to-br from-cyber-pink to-cyber-purple rounded-full flex items-center justify-center mb-8 shadow-[0_0_30px_rgba(255,0,127,0.5)]">
+<i class="fas fa-quote-right text-2xl text-white"></i>
+</div>
+<h2 class="text-2xl md:text-4xl font-light mb-10 leading-relaxed text-gray-200 italic">
+"Dans un web saturé de templates génériques, la personnalisation, la vitesse et l'attention portée aux détails sont les seules véritables monnaies d'échange."
+</h2>
+<div class="flex flex-col items-center justify-center">
+<p class="font-mono text-white font-bold tracking-widest uppercase mb-1">Ma Vision</p>
+<div class="w-12 h-1 bg-cyber-cyan rounded"></div>
+</div>
+</div>
+</section>
+
+<section id="contact" class="py-32 relative">
+<div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+<div class="glass-panel rounded-3xl overflow-hidden border border-white/10 flex flex-col lg:flex-row reveal shadow-2xl">
+
+<div class="lg:w-2/5 bg-gradient-to-br from-cyber-dark to-black p-12 flex flex-col justify-between border-r border-white/5 relative overflow-hidden">
+<div class="absolute top-0 right-0 w-64 h-64 bg-cyber-pink rounded-full mix-blend-screen filter blur-[100px] opacity-20"></div>
+<div class="absolute bottom-0 left-0 w-64 h-64 bg-cyber-cyan rounded-full mix-blend-screen filter blur-[100px] opacity-20"></div>
+
+<div class="relative z-10">
+<h2 class="text-3xl font-bold font-mono mb-2 text-white">Connexion</h2>
+<p class="text-gray-400 mb-8 font-light">Discutons de vos problématiques et trouvons la solution digitale adaptée.</p>
+
+<div class="space-y-6">
+<div class="flex items-start">
+<div class="w-10 h-10 rounded bg-white/5 flex items-center justify-center text-cyber-cyan mr-4 border border-white/5">
+<i class="fas fa-envelope"></i>
+</div>
+<div>
+<p class="text-xs text-gray-500 font-mono uppercase mb-1">Email</p>
+<p class="text-white">contact@cyber-dev.fr</p>
+</div>
+</div>
+<div class="flex items-start">
+<div class="w-10 h-10 rounded bg-white/5 flex items-center justify-center text-cyber-pink mr-4 border border-white/5">
+<i class="fas fa-map-marker-alt"></i>
+</div>
+<div>
+<p class="text-xs text-gray-500 font-mono uppercase mb-1">Localisation</p>
+<p class="text-white">Île-de-France (Distanciel possible)</p>
+</div>
+</div>
+</div>
+</div>
+
+<div class="mt-12 relative z-10">
+<p class="text-xs text-gray-500 font-mono uppercase mb-4">Réseaux Sécurisés</p>
+<div class="flex gap-4">
+<a href="#" class="w-10 h-10 rounded-full border border-gray-700 flex items-center justify-center text-gray-400 hover:text-white hover:border-cyber-cyan hover:bg-cyber-cyan/10 transition-all"><i class="fab fa-github"></i></a>
+<a href="#" class="w-10 h-10 rounded-full border border-gray-700 flex items-center justify-center text-gray-400 hover:text-white hover:border-cyber-purple hover:bg-cyber-purple/10 transition-all"><i class="fab fa-linkedin-in"></i></a>
+</div>
+</div>
+</div>
+
+<div class="lg:w-3/5 p-12 bg-black/40">
+<form class="space-y-6" onsubmit="event.preventDefault(); alert('Transmission de données établie. Ceci est une simulation.');">
+<div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+<div>
+<label class="block text-xs font-mono text-gray-400 mb-2 uppercase tracking-wide">Nom de l'entité</label>
+<input type="text" required class="input-styled w-full px-4 py-3 rounded-lg font-mono text-sm" placeholder="Votre Nom / PME">
+</div>
+<div>
+<label class="block text-xs font-mono text-gray-400 mb-2 uppercase tracking-wide">Adresse retour</label>
+<input type="email" required class="input-styled w-full px-4 py-3 rounded-lg font-mono text-sm" placeholder="email@domaine.com">
+</div>
+</div>
+<div>
+<label class="block text-xs font-mono text-gray-400 mb-2 uppercase tracking-wide">Sujet de la requête</label>
+<select class="input-styled w-full px-4 py-3 rounded-lg font-mono text-sm appearance-none">
+<option value="" disabled selected>Sélectionnez une option</option>
+<option value="1">Création de site vitrine</option>
+<option value="2">Refonte et optimisation</option>
+<option value="3">Autre proposition technique</option>
+</select>
+</div>
+<div>
+<label class="block text-xs font-mono text-gray-400 mb-2 uppercase tracking-wide">Spécifications du projet</label>
+<textarea rows="4" required class="input-styled w-full px-4 py-3 rounded-lg font-mono text-sm resize-none" placeholder="Décrivez votre besoin actuel..."></textarea>
+</div>
+<button type="submit" class="btn-cyber w-full mt-4">
+Initialiser la transmission <i class="fas fa-paper-plane ml-3"></i>
+</button>
+</form>
+</div>
+
+</div>
+</div>
+</section>
+
+<footer class="py-6 bg-black border-t border-white/5 text-center relative z-10">
+<p class="text-gray-500 font-mono text-xs tracking-widest uppercase">
+© 2026 CYBER_DEV // Conçu pour les professionnels.
+</p>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>

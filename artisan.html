@@ -1,0 +1,419 @@
+<!DOCTYPE html>
+<html lang="fr" class="scroll-smooth">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>L'Atelier Dubois | Menuiserie Sur-Mesure</title>
+<script src="https://cdn.tailwindcss.com"></script>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+<script>
+tailwind.config = {
+theme: {
+extend: {
+fontFamily: {
+serif: ['"Playfair Display"', 'serif'],
+sans: ['Lato', 'sans-serif']
+},
+colors: {
+wood: {
+light: '#D4A373',
+DEFAULT: '#A68A64',
+dark: '#5C4033'
+}
+}
+}
+}
+}
+</script>
+<style>
+.hero-bg {
+background-image: linear-gradient(rgba(17, 24, 39, 0.7), rgba(17, 24, 39, 0.7)), url('https://images.unsplash.com/photo-1610832958506-aa56368176cf?q=80&w=1920&auto=format&fit=crop');
+background-size: cover;
+background-position: center;
+background-attachment: fixed;
+}
+.reveal {
+opacity: 0;
+transform: translateY(30px);
+transition: all 0.8s ease-out;
+}
+.reveal.active {
+opacity: 1;
+transform: translateY(0);
+}
+#navbar {
+transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+.scrolled {
+background-color: rgba(255, 255, 255, 0.95);
+box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+}
+.scrolled .nav-text {
+color: #1f2937;
+}
+.scrolled .nav-btn {
+background-color: #5C4033;
+color: white;
+}
+</style>
+</head>
+<body class="font-sans text-gray-800 antialiased bg-stone-50">
+
+<nav id="navbar" class="fixed w-full z-50 top-0 transition-all duration-300 bg-transparent py-4">
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+<div class="flex justify-between items-center">
+<a href="#" class="flex items-center gap-2 nav-text text-white">
+<i class="fas fa-tree text-wood-light text-2xl"></i>
+<span class="font-serif font-bold text-xl tracking-wider uppercase">Atelier Dubois</span>
+</a>
+<div class="hidden md:flex space-x-8 items-center nav-text text-white font-medium">
+<a href="#services" class="hover:text-wood-light transition-colors">Notre Savoir-Faire</a>
+<a href="#realisations" class="hover:text-wood-light transition-colors">Réalisations</a>
+<a href="#about" class="hover:text-wood-light transition-colors">L'Atelier</a>
+<a href="#contact" class="nav-btn bg-wood-light text-white px-6 py-2 rounded transition-colors hover:bg-wood-dark font-semibold">Devis Gratuit</a>
+</div>
+<button id="mobile-btn" class="md:hidden nav-text text-white text-2xl">
+<i class="fas fa-bars"></i>
+</button>
+</div>
+</div>
+<div id="mobile-menu" class="hidden bg-white shadow-xl absolute top-full left-0 w-full flex flex-col px-4 py-6 space-y-4 text-gray-800 border-t">
+<a href="#services" class="font-medium hover:text-wood-light">Notre Savoir-Faire</a>
+<a href="#realisations" class="font-medium hover:text-wood-light">Réalisations</a>
+<a href="#about" class="font-medium hover:text-wood-light">L'Atelier</a>
+<a href="#contact" class="bg-wood-dark text-white px-6 py-3 rounded text-center font-semibold">Devis Gratuit</a>
+</div>
+</nav>
+
+<header class="hero-bg min-h-screen flex items-center justify-center pt-20">
+<div class="text-center px-4 max-w-4xl mx-auto reveal">
+<p class="text-wood-light font-bold tracking-widest uppercase mb-4">Artisan Menuisier en Île-de-France</p>
+<h1 class="text-5xl md:text-7xl font-serif text-white font-bold mb-6 leading-tight">
+L'Art de façonner<br>votre intérieur.
+</h1>
+<p class="text-gray-200 text-lg md:text-xl mb-10 max-w-2xl mx-auto font-light">
+Créations sur-mesure, agencement et restauration. Nous donnons vie à vos projets avec des essences de bois nobles et un savoir-faire traditionnel.
+</p>
+<div class="flex flex-col sm:flex-row justify-center gap-4">
+<a href="#contact" class="bg-wood-light hover:bg-wood-dark text-white px-8 py-4 rounded font-bold transition-colors text-lg">
+Parler de mon projet
+</a>
+<a href="#realisations" class="border-2 border-white text-white hover:bg-white hover:text-gray-900 px-8 py-4 rounded font-bold transition-colors text-lg">
+Voir nos créations
+</a>
+</div>
+</div>
+</header>
+
+<section class="py-16 bg-wood-dark text-white text-center">
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+<div class="grid grid-cols-1 md:grid-cols-3 gap-8 divide-y md:divide-y-0 md:divide-x divide-white/20">
+<div class="py-4 reveal">
+<i class="fas fa-hammer text-4xl text-wood-light mb-4"></i>
+<h3 class="text-xl font-serif font-bold mb-2">Artisanat Local</h3>
+<p class="text-gray-300 text-sm">Fabrication 100% française dans notre atelier.</p>
+</div>
+<div class="py-4 reveal" style="transition-delay: 100ms;">
+<i class="fas fa-ruler-combined text-4xl text-wood-light mb-4"></i>
+<h3 class="text-xl font-serif font-bold mb-2">Sur-Mesure</h3>
+<p class="text-gray-300 text-sm">Des créations uniques adaptées à vos espaces.</p>
+</div>
+<div class="py-4 reveal" style="transition-delay: 200ms;">
+<i class="fas fa-leaf text-4xl text-wood-light mb-4"></i>
+<h3 class="text-xl font-serif font-bold mb-2">Bois Éco-responsable</h3>
+<p class="text-gray-300 text-sm">Sélection rigoureuse d'essences durables.</p>
+</div>
+</div>
+</div>
+</section>
+
+<section id="services" class="py-24 bg-stone-50">
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+<div class="text-center mb-16 reveal">
+<h2 class="text-sm font-bold text-wood-light tracking-widest uppercase mb-2">Savoir-Faire</h2>
+<h3 class="text-4xl font-serif font-bold text-gray-900">Nos Domaines d'Expertise</h3>
+<div class="w-24 h-1 bg-wood-light mx-auto mt-6"></div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-10">
+<div class="bg-white rounded-lg overflow-hidden shadow-lg hover:shadow-xl transition-shadow reveal">
+<img src="https://images.unsplash.com/photo-1556910103-1c02745a872f?q=80&w=800&auto=format&fit=crop" alt="[Image Aménagement Cuisine]" class="w-full h-64 object-cover">
+<div class="p-8">
+<h4 class="text-2xl font-serif font-bold mb-3 text-gray-900">Agencement Intérieur</h4>
+<p class="text-gray-600 mb-4 line-clamp-3">Cuisines, dressings, bibliothèques. Nous optimisons vos espaces de vie avec des meubles conçus spécialement pour votre intérieur.</p>
+<a href="#contact" class="text-wood-dark font-bold hover:text-wood-light transition-colors flex items-center">Demander un devis <i class="fas fa-arrow-right ml-2"></i></a>
+</div>
+</div>
+<div class="bg-white rounded-lg overflow-hidden shadow-lg hover:shadow-xl transition-shadow reveal" style="transition-delay: 100ms;">
+<img src="https://images.unsplash.com/photo-1533090161767-e6ffed986c88?q=80&w=800&auto=format&fit=crop" alt="[Image Mobilier]" class="w-full h-64 object-cover">
+<div class="p-8">
+<h4 class="text-2xl font-serif font-bold mb-3 text-gray-900">Mobilier Unique</h4>
+<p class="text-gray-600 mb-4 line-clamp-3">Tables massives, bureaux, commodes. Des pièces maîtresses façonnées à la main qui traverseront les générations.</p>
+<a href="#contact" class="text-wood-dark font-bold hover:text-wood-light transition-colors flex items-center">Demander un devis <i class="fas fa-arrow-right ml-2"></i></a>
+</div>
+</div>
+<div class="bg-white rounded-lg overflow-hidden shadow-lg hover:shadow-xl transition-shadow reveal" style="transition-delay: 200ms;">
+<img src="https://images.unsplash.com/photo-1513694203232-719a280e022f?q=80&w=800&auto=format&fit=crop" alt="[Image Rénovation]" class="w-full h-64 object-cover">
+<div class="p-8">
+<h4 class="text-2xl font-serif font-bold mb-3 text-gray-900">Rénovation & Boiseries</h4>
+<p class="text-gray-600 mb-4 line-clamp-3">Restauration de meubles anciens, parquets massifs, et escaliers. Redonnez vie à l'âme de votre habitation.</p>
+<a href="#contact" class="text-wood-dark font-bold hover:text-wood-light transition-colors flex items-center">Demander un devis <i class="fas fa-arrow-right ml-2"></i></a>
+</div>
+</div>
+</div>
+</div>
+</section>
+
+<section id="realisations" class="py-24 bg-white">
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+<div class="flex flex-col md:flex-row justify-between items-end mb-12 reveal">
+<div>
+<h2 class="text-sm font-bold text-wood-light tracking-widest uppercase mb-2">Portfolio</h2>
+<h3 class="text-4xl font-serif font-bold text-gray-900">Dernières Réalisations</h3>
+</div>
+<a href="#contact" class="hidden md:inline-block border-b-2 border-wood-dark text-wood-dark font-bold hover:text-wood-light hover:border-wood-light transition-colors pb-1">Votre projet ici ?</a>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+<div class="group relative overflow-hidden rounded reveal">
+<img src="https://images.unsplash.com/photo-1550581190-9c1c48d21d6c?q=80&w=800&auto=format&fit=crop" alt="[Image Table sur mesure]" class="w-full h-80 object-cover transform group-hover:scale-110 transition-transform duration-700">
+<div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-6">
+<h4 class="text-white font-serif text-xl font-bold">Table en Chêne Massif</h4>
+<p class="text-gray-300 text-sm">Paris 15ème</p>
+</div>
+</div>
+<div class="group relative overflow-hidden rounded reveal">
+<img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?q=80&w=800&auto=format&fit=crop" alt="[Image Dressing]" class="w-full h-80 object-cover transform group-hover:scale-110 transition-transform duration-700">
+<div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-6">
+<h4 class="text-white font-serif text-xl font-bold">Dressing Suite Parentale</h4>
+<p class="text-gray-300 text-sm">Boulogne-Billancourt</p>
+</div>
+</div>
+<div class="group relative overflow-hidden rounded reveal">
+<img src="https://images.unsplash.com/photo-1524758631624-e2822e304c36?q=80&w=800&auto=format&fit=crop" alt="[Image Escalier]" class="w-full h-80 object-cover transform group-hover:scale-110 transition-transform duration-700">
+<div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-6">
+<h4 class="text-white font-serif text-xl font-bold">Escalier Contemporain</h4>
+<p class="text-gray-300 text-sm">Versailles</p>
+</div>
+</div>
+<div class="group relative overflow-hidden rounded lg:col-span-2 reveal">
+<img src="https://images.unsplash.com/photo-1556912173-3bb406ef7e77?q=80&w=1200&auto=format&fit=crop" alt="[Image Cuisine]" class="w-full h-80 object-cover transform group-hover:scale-110 transition-transform duration-700">
+<div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-6">
+<h4 class="text-white font-serif text-2xl font-bold">Cuisine Ouverte Noyer</h4>
+<p class="text-gray-300">Projet de rénovation complète</p>
+</div>
+</div>
+<div class="group relative overflow-hidden rounded reveal">
+<img src="https://images.unsplash.com/photo-1597072689227-8882273e8f6a?q=80&w=800&auto=format&fit=crop" alt="[Image Porte]" class="w-full h-80 object-cover transform group-hover:scale-110 transition-transform duration-700">
+<div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-6">
+<h4 class="text-white font-serif text-xl font-bold">Porte d'Entrée Sur-Mesure</h4>
+<p class="text-gray-300 text-sm">Neuilly-sur-Seine</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+
+<section id="about" class="py-24 bg-stone-100">
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+<div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+<div class="relative reveal">
+<img src="https://images.unsplash.com/photo-1601598851547-4302969d0614?q=80&w=800&auto=format&fit=crop" alt="[Image Artisan travaillant le bois]" class="rounded-lg shadow-2xl z-10 relative">
+<div class="absolute -bottom-8 -right-8 w-64 h-64 bg-wood-light rounded-lg -z-0 hidden md:block"></div>
+<div class="absolute -top-8 -left-8 w-32 h-32 border-4 border-wood-dark rounded-lg -z-0 hidden md:block"></div>
+</div>
+<div class="reveal">
+<h2 class="text-sm font-bold text-wood-light tracking-widest uppercase mb-2">L'Atelier Dubois</h2>
+<h3 class="text-4xl font-serif font-bold text-gray-900 mb-6">15 ans de passion pour la matière vivante.</h3>
+<p class="text-gray-600 mb-6 leading-relaxed">
+Fondé en 2010, l'Atelier Dubois est né d'une passion transmise de père en fils. Nous croyons que chaque morceau de bois a une histoire à raconter et mérite d'être travaillé avec respect et précision.
+</p>
+<p class="text-gray-600 mb-8 leading-relaxed">
+De la conception 3D à la pose finale, nous vous accompagnons à chaque étape. Notre promesse : allier l'esthétique du design contemporain à la robustesse des assemblages traditionnels.
+</p>
+<div class="grid grid-cols-2 gap-6 border-t border-gray-200 pt-8">
+<div>
+<p class="text-4xl font-serif font-bold text-wood-dark mb-1">300+</p>
+<p class="text-sm text-gray-500 font-bold uppercase tracking-wider">Projets Réalisés</p>
+</div>
+<div>
+<p class="text-4xl font-serif font-bold text-wood-dark mb-1">100%</p>
+<p class="text-sm text-gray-500 font-bold uppercase tracking-wider">Clients Satisfaits</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+
+<section id="contact" class="py-24 bg-white relative overflow-hidden">
+<div class="absolute right-0 top-0 w-1/3 h-full bg-stone-50 -skew-x-12 transform origin-top hidden lg:block"></div>
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+<div class="grid grid-cols-1 lg:grid-cols-2 gap-16">
+<div class="reveal">
+<h2 class="text-sm font-bold text-wood-light tracking-widest uppercase mb-2">Demande de Devis</h2>
+<h3 class="text-4xl font-serif font-bold text-gray-900 mb-6">Discutons de votre projet</h3>
+<p class="text-gray-600 mb-10">Remplissez le formulaire ci-dessous avec les détails de votre projet. Nous vous recontacterons sous 48h pour organiser une visite technique gratuite.</p>
+
+<div class="space-y-6">
+<div class="flex items-start">
+<div class="w-12 h-12 bg-wood-light/20 text-wood-dark rounded-full flex items-center justify-center text-xl shrink-0">
+<i class="fas fa-map-marker-alt"></i>
+</div>
+<div class="ml-4 mt-1">
+<h4 class="font-bold text-gray-900">Notre Atelier</h4>
+<p class="text-gray-600">12 Rue des Artisans<br>75011 Paris, France</p>
+</div>
+</div>
+<div class="flex items-start">
+<div class="w-12 h-12 bg-wood-light/20 text-wood-dark rounded-full flex items-center justify-center text-xl shrink-0">
+<i class="fas fa-phone"></i>
+</div>
+<div class="ml-4 mt-1">
+<h4 class="font-bold text-gray-900">Téléphone</h4>
+<p class="text-gray-600">01 23 45 67 89</p>
+</div>
+</div>
+<div class="flex items-start">
+<div class="w-12 h-12 bg-wood-light/20 text-wood-dark rounded-full flex items-center justify-center text-xl shrink-0">
+<i class="fas fa-envelope"></i>
+</div>
+<div class="ml-4 mt-1">
+<h4 class="font-bold text-gray-900">Email</h4>
+<p class="text-gray-600">contact@atelierdubois.fr</p>
+</div>
+</div>
+</div>
+</div>
+
+<div class="bg-white p-8 md:p-10 rounded-xl shadow-2xl reveal border border-gray-100">
+<form onsubmit="event.preventDefault();">
+<div class="grid grid-cols-1 sm:grid-cols-2 gap-6 mb-6">
+<div>
+<label class="block text-sm font-bold text-gray-700 mb-2">Nom complet *</label>
+<input type="text" required class="w-full px-4 py-3 bg-gray-50 border border-gray-200 rounded focus:outline-none focus:border-wood-light focus:ring-1 focus:ring-wood-light transition-colors">
+</div>
+<div>
+<label class="block text-sm font-bold text-gray-700 mb-2">Téléphone *</label>
+<input type="tel" required class="w-full px-4 py-3 bg-gray-50 border border-gray-200 rounded focus:outline-none focus:border-wood-light focus:ring-1 focus:ring-wood-light transition-colors">
+</div>
+</div>
+<div class="mb-6">
+<label class="block text-sm font-bold text-gray-700 mb-2">Email</label>
+<input type="email" class="w-full px-4 py-3 bg-gray-50 border border-gray-200 rounded focus:outline-none focus:border-wood-light focus:ring-1 focus:ring-wood-light transition-colors">
+</div>
+<div class="mb-6">
+<label class="block text-sm font-bold text-gray-700 mb-2">Type de projet *</label>
+<select required class="w-full px-4 py-3 bg-gray-50 border border-gray-200 rounded focus:outline-none focus:border-wood-light focus:ring-1 focus:ring-wood-light transition-colors">
+<option value="" disabled selected>Sélectionnez une option</option>
+<option value="cuisine">Aménagement Cuisine</option>
+<option value="dressing">Dressing / Rangement</option>
+<option value="meuble">Meuble Sur-Mesure</option>
+<option value="renovation">Rénovation / Parquet</option>
+</select>
+</div>
+<div class="mb-6">
+<label class="block text-sm font-bold text-gray-700 mb-2">Description du besoin *</label>
+<textarea required rows="4" class="w-full px-4 py-3 bg-gray-50 border border-gray-200 rounded focus:outline-none focus:border-wood-light focus:ring-1 focus:ring-wood-light transition-colors resize-none"></textarea>
+</div>
+<button type="submit" class="w-full bg-wood-dark hover:bg-wood-light text-white font-bold py-4 rounded transition-colors text-lg">
+Envoyer ma demande
+</button>
+</form>
+</div>
+</div>
+</div>
+</section>
+
+<footer class="bg-gray-900 text-gray-300 py-12 border-t-4 border-wood-light">
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+<div class="grid grid-cols-1 md:grid-cols-4 gap-8 mb-8">
+<div class="md:col-span-2">
+<a href="#" class="flex items-center gap-2 text-white mb-4">
+<i class="fas fa-tree text-wood-light text-2xl"></i>
+<span class="font-serif font-bold text-xl tracking-wider uppercase">Atelier Dubois</span>
+</a>
+<p class="text-sm leading-relaxed max-w-sm mb-6">
+Menuiserie et ébénisterie sur-mesure en Île-de-France. L'alliance de l'artisanat traditionnel et du design contemporain.
+</p>
+<div class="flex space-x-4">
+<a href="#" class="w-10 h-10 rounded-full bg-gray-800 flex items-center justify-center hover:bg-wood-light hover:text-white transition-colors"><i class="fab fa-instagram"></i></a>
+<a href="#" class="w-10 h-10 rounded-full bg-gray-800 flex items-center justify-center hover:bg-wood-light hover:text-white transition-colors"><i class="fab fa-facebook-f"></i></a>
+<a href="#" class="w-10 h-10 rounded-full bg-gray-800 flex items-center justify-center hover:bg-wood-light hover:text-white transition-colors"><i class="fab fa-houzz"></i></a>
+</div>
+</div>
+<div>
+<h4 class="text-white font-bold mb-4 uppercase text-sm tracking-wider">Liens Rapides</h4>
+<ul class="space-y-2 text-sm">
+<li><a href="#services" class="hover:text-wood-light transition-colors">Notre Savoir-Faire</a></li>
+<li><a href="#realisations" class="hover:text-wood-light transition-colors">Nos Réalisations</a></li>
+<li><a href="#about" class="hover:text-wood-light transition-colors">L'Atelier</a></li>
+<li><a href="#contact" class="hover:text-wood-light transition-colors">Demander un devis</a></li>
+</ul>
+</div>
+<div>
+<h4 class="text-white font-bold mb-4 uppercase text-sm tracking-wider">Légal</h4>
+<ul class="space-y-2 text-sm">
+<li><a href="#" class="hover:text-wood-light transition-colors">Mentions Légales</a></li>
+<li><a href="#" class="hover:text-wood-light transition-colors">Politique de Confidentialité</a></li>
+<li><a href="#" class="hover:text-wood-light transition-colors">CGV</a></li>
+</ul>
+</div>
+</div>
+<div class="border-t border-gray-800 pt-8 text-center text-sm flex flex-col md:flex-row justify-between items-center">
+<p>&copy; 2026 L'Atelier Dubois. Tous droits réservés.</p>
+<p class="mt-2 md:mt-0 text-gray-500">Création site web : <span class="text-wood-light font-bold">Ton Nom / Agence</span></p>
+</div>
+</div>
+</footer>
+
+<script>
+const navbar = document.getElementById('navbar');
+const mobileBtn = document.getElementById('mobile-btn');
+const mobileMenu = document.getElementById('mobile-menu');
+const navLinks = document.querySelectorAll('.nav-text');
+
+window.addEventListener('scroll', () => {
+if (window.scrollY > 50) {
+navbar.classList.add('scrolled');
+navLinks.forEach(link => {
+if(!link.classList.contains('nav-btn') && !link.classList.contains('text-white')) {
+link.classList.remove('text-white');
+link.classList.add('text-gray-900');
+}
+});
+} else {
+navbar.classList.remove('scrolled');
+}
+});
+
+mobileBtn.addEventListener('click', () => {
+mobileMenu.classList.toggle('hidden');
+});
+
+mobileMenu.querySelectorAll('a').forEach(link => {
+link.addEventListener('click', () => {
+mobileMenu.classList.add('hidden');
+});
+});
+
+const reveals = document.querySelectorAll('.reveal');
+
+const revealOnScroll = new IntersectionObserver((entries, observer) => {
+entries.forEach(entry => {
+if (entry.isIntersecting) {
+entry.target.classList.add('active');
+observer.unobserve(entry.target);
+}
+});
+}, {
+threshold: 0.15,
+rootMargin: "0px 0px -50px 0px"
+});
+
+reveals.forEach(reveal => {
+revealOnScroll.observe(reveal);
+});
+</script>
+
+</body>
+</html>

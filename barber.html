@@ -1,0 +1,409 @@
+<!DOCTYPE html>
+<html lang="fr" class="scroll-smooth">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Maison Barbier | Coiffeur & Barbier Traditionnel</title>
+<script src="https://cdn.tailwindcss.com"></script>
+<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;700&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+<script>
+tailwind.config = {
+theme: {
+extend: {
+fontFamily: {
+display: ['Oswald', 'sans-serif'],
+sans: ['Inter', 'sans-serif']
+},
+colors: {
+barber: {
+black: '#0a0a0a',
+dark: '#171717',
+gray: '#262626',
+gold: '#c5a059',
+light: '#f5f5f5'
+}
+}
+}
+}
+}
+</script>
+<style>
+body {
+background-color: #0a0a0a;
+color: #f5f5f5;
+}
+.hero-bg {
+background-image: linear-gradient(to right, rgba(10, 10, 10, 0.9), rgba(10, 10, 10, 0.4)), url('https://images.unsplash.com/photo-1585747860715-2ba37e788b70?q=80&w=1920&auto=format&fit=crop');
+background-size: cover;
+background-position: center;
+background-attachment: fixed;
+}
+.pattern-bg {
+background-image: radial-gradient(#262626 1px, transparent 1px);
+background-size: 20px 20px;
+}
+.reveal {
+opacity: 0;
+transform: translateY(30px);
+transition: all 0.7s ease-out;
+}
+.reveal.active {
+opacity: 1;
+transform: translateY(0);
+}
+#navbar {
+transition: all 0.3s ease;
+}
+.scrolled {
+background-color: #0a0a0a;
+border-bottom: 1px solid #262626;
+box-shadow: 0 4px 20px rgba(0, 0, 0, 0.8);
+}
+.price-dots {
+flex-grow: 1;
+border-bottom: 2px dotted #262626;
+margin: 0 15px;
+position: relative;
+top: -5px;
+}
+.btn-outline {
+border: 2px solid #c5a059;
+color: #c5a059;
+transition: all 0.3s ease;
+}
+.btn-outline:hover {
+background-color: #c5a059;
+color: #0a0a0a;
+}
+</style>
+</head>
+<body class="font-sans antialiased selection:bg-barber-gold selection:text-barber-black">
+
+<nav id="navbar" class="fixed w-full z-50 top-0 py-5 transition-all duration-300">
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+<div class="flex justify-between items-center">
+<a href="#" class="flex items-center gap-3">
+<i class="fas fa-cut text-barber-gold text-2xl transform -rotate-45"></i>
+<span class="font-display font-bold text-2xl tracking-widest uppercase text-white">Maison Barbier</span>
+</a>
+<div class="hidden md:flex space-x-8 items-center font-display tracking-wider uppercase text-sm">
+<a href="#services" class="text-gray-300 hover:text-barber-gold transition-colors">Services</a>
+<a href="#tarifs" class="text-gray-300 hover:text-barber-gold transition-colors">Tarifs</a>
+<a href="#galerie" class="text-gray-300 hover:text-barber-gold transition-colors">Galerie</a>
+<a href="#reservation" class="bg-barber-gold text-barber-black px-6 py-2 hover:bg-white transition-colors font-bold">Prendre RDV</a>
+</div>
+<button id="mobile-btn" class="md:hidden text-white text-2xl hover:text-barber-gold transition-colors">
+<i class="fas fa-bars"></i>
+</button>
+</div>
+</div>
+<div id="mobile-menu" class="hidden bg-barber-black absolute top-full left-0 w-full flex flex-col px-4 py-6 space-y-4 border-t border-barber-gray text-center font-display uppercase tracking-wider">
+<a href="#services" class="text-gray-300 hover:text-barber-gold py-2">Services</a>
+<a href="#tarifs" class="text-gray-300 hover:text-barber-gold py-2">Tarifs</a>
+<a href="#galerie" class="text-gray-300 hover:text-barber-gold py-2">Galerie</a>
+<a href="#reservation" class="bg-barber-gold text-barber-black py-3 font-bold mt-4">Prendre RDV</a>
+</div>
+</nav>
+
+<header class="hero-bg min-h-screen flex items-center pt-20">
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
+<div class="max-w-2xl reveal">
+<div class="flex items-center gap-4 mb-6">
+<div class="h-0.5 w-12 bg-barber-gold"></div>
+<p class="text-barber-gold font-display tracking-[0.2em] uppercase text-sm font-bold">L'Excellence du soin masculin</p>
+</div>
+<h1 class="text-6xl md:text-8xl font-display font-bold text-white mb-6 uppercase leading-none tracking-tight">
+L'Art du<br>Rasage<br>Traditionnel
+</h1>
+<p class="text-gray-400 text-lg mb-10 font-light leading-relaxed max-w-lg">
+Découvrez un espace dédié à l'élégance masculine. Taille de barbe à l'ancienne, coupes sur-mesure et soins du visage dans une atmosphère authentique.
+</p>
+<div class="flex flex-col sm:flex-row gap-4">
+<a href="#reservation" class="bg-barber-gold text-barber-black text-center px-8 py-4 font-display font-bold uppercase tracking-wider hover:bg-white transition-colors">
+Réserver maintenant
+</a>
+<a href="#tarifs" class="btn-outline text-center px-8 py-4 font-display font-bold uppercase tracking-wider">
+Voir nos tarifs
+</a>
+</div>
+</div>
+</div>
+</header>
+
+<section class="py-12 bg-barber-gold text-barber-black">
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+<div class="grid grid-cols-1 md:grid-cols-3 gap-8 text-center divide-y md:divide-y-0 md:divide-x divide-barber-black/20">
+<div class="py-4 reveal">
+<i class="fas fa-clock text-3xl mb-3"></i>
+<h3 class="font-display font-bold uppercase tracking-wider mb-1">Ouvert 6j/7</h3>
+<p class="text-sm font-semibold opacity-80">De 9h00 à 20h00</p>
+</div>
+<div class="py-4 reveal" style="transition-delay: 100ms;">
+<i class="fas fa-map-marker-alt text-3xl mb-3"></i>
+<h3 class="font-display font-bold uppercase tracking-wider mb-1">En plein centre</h3>
+<p class="text-sm font-semibold opacity-80">Parking à proximité</p>
+</div>
+<div class="py-4 reveal" style="transition-delay: 200ms;">
+<i class="fas fa-coffee text-3xl mb-3"></i>
+<h3 class="font-display font-bold uppercase tracking-wider mb-1">Espace Lounge</h3>
+<p class="text-sm font-semibold opacity-80">Café & spiritueux offerts</p>
+</div>
+</div>
+</div>
+</section>
+
+<section id="services" class="py-24 bg-barber-dark pattern-bg">
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+<div class="text-center mb-16 reveal">
+<h2 class="text-barber-gold font-display tracking-[0.2em] uppercase text-sm font-bold mb-2">Notre Expertise</h2>
+<h3 class="text-4xl md:text-5xl font-display font-bold text-white uppercase tracking-tight">Services Exclusifs</h3>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+<div class="bg-barber-black p-8 border border-barber-gray hover:border-barber-gold transition-colors group reveal">
+<div class="w-16 h-16 bg-barber-gray flex items-center justify-center rounded mb-6 group-hover:bg-barber-gold transition-colors">
+<img src="https://api.iconify.design/ph/scissors-bold.svg?color=%23c5a059" alt="[Ciseaux]" class="w-8 h-8 group-hover:filter group-hover:brightness-0">
+</div>
+<h4 class="text-2xl font-display font-bold text-white uppercase tracking-wide mb-4">La Coupe</h4>
+<p class="text-gray-400 font-light leading-relaxed mb-6">Un diagnostic personnalisé suivi d'une coupe aux ciseaux ou à la tondeuse, adaptée à la morphologie de votre visage.</p>
+<a href="#reservation" class="text-barber-gold font-display font-bold uppercase tracking-wider text-sm flex items-center group-hover:text-white transition-colors">Réserver <i class="fas fa-arrow-right ml-2"></i></a>
+</div>
+<div class="bg-barber-black p-8 border border-barber-gray hover:border-barber-gold transition-colors group reveal" style="transition-delay: 100ms;">
+<div class="w-16 h-16 bg-barber-gray flex items-center justify-center rounded mb-6 group-hover:bg-barber-gold transition-colors">
+<i class="fas fa-cut text-2xl text-barber-gold group-hover:text-barber-black transition-colors"></i>
+</div>
+<h4 class="text-2xl font-display font-bold text-white uppercase tracking-wide mb-4">Le Rasage</h4>
+<p class="text-gray-400 font-light leading-relaxed mb-6">Rituel traditionnel coupe-choux, serviette chaude et application d'huiles essentielles pour une peau apaisée et hydratée.</p>
+<a href="#reservation" class="text-barber-gold font-display font-bold uppercase tracking-wider text-sm flex items-center group-hover:text-white transition-colors">Réserver <i class="fas fa-arrow-right ml-2"></i></a>
+</div>
+<div class="bg-barber-black p-8 border border-barber-gray hover:border-barber-gold transition-colors group reveal" style="transition-delay: 200ms;">
+<div class="w-16 h-16 bg-barber-gray flex items-center justify-center rounded mb-6 group-hover:bg-barber-gold transition-colors">
+<i class="fas fa-spray-can text-2xl text-barber-gold group-hover:text-barber-black transition-colors"></i>
+</div>
+<h4 class="text-2xl font-display font-bold text-white uppercase tracking-wide mb-4">Soin Complet</h4>
+<p class="text-gray-400 font-light leading-relaxed mb-6">Le summum de la relaxation. Coupe, taille de barbe, gommage du visage et massage crânien pour une détente totale.</p>
+<a href="#reservation" class="text-barber-gold font-display font-bold uppercase tracking-wider text-sm flex items-center group-hover:text-white transition-colors">Réserver <i class="fas fa-arrow-right ml-2"></i></a>
+</div>
+</div>
+</div>
+</section>
+
+<section id="tarifs" class="py-24 bg-barber-black">
+<div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+<div class="flex flex-col md:flex-row justify-between items-center mb-16 reveal gap-6">
+<div>
+<h2 class="text-barber-gold font-display tracking-[0.2em] uppercase text-sm font-bold mb-2">Prestations</h2>
+<h3 class="text-4xl md:text-5xl font-display font-bold text-white uppercase tracking-tight">Nos Tarifs</h3>
+</div>
+<div class="text-gray-400 font-light italic border-l-4 border-barber-gold pl-4 max-w-sm">
+Les tarifs incluent le diagnostic, le shampoing et les produits de coiffage haut de gamme.
+</div>
+</div>
+
+<div class="grid grid-cols-1 md:grid-cols-2 gap-12 lg:gap-20">
+<div class="reveal">
+<h4 class="text-2xl font-display font-bold text-white uppercase tracking-wide mb-8 pb-4 border-b border-barber-gray">Cheveux</h4>
+<div class="space-y-6">
+<div class="flex items-center">
+<span class="text-lg font-bold text-white uppercase tracking-wider">Coupe Classique</span>
+<div class="price-dots"></div>
+<span class="text-2xl font-display font-bold text-barber-gold">25€</span>
+</div>
+<div class="flex items-center">
+<span class="text-lg font-bold text-white uppercase tracking-wider">Dégradé à Blanc</span>
+<div class="price-dots"></div>
+<span class="text-2xl font-display font-bold text-barber-gold">28€</span>
+</div>
+<div class="flex items-center">
+<span class="text-lg font-bold text-white uppercase tracking-wider">Coupe Enfant (-12)</span>
+<div class="price-dots"></div>
+<span class="text-2xl font-display font-bold text-barber-gold">18€</span>
+</div>
+<div class="flex items-center">
+<span class="text-lg font-bold text-white uppercase tracking-wider">Coloration / Déco</span>
+<div class="price-dots"></div>
+<span class="text-2xl font-display font-bold text-barber-gold">45€</span>
+</div>
+</div>
+</div>
+<div class="reveal" style="transition-delay: 100ms;">
+<h4 class="text-2xl font-display font-bold text-white uppercase tracking-wide mb-8 pb-4 border-b border-barber-gray">Barbe & Soins</h4>
+<div class="space-y-6">
+<div class="flex items-center">
+<span class="text-lg font-bold text-white uppercase tracking-wider">Taille Simple</span>
+<div class="price-dots"></div>
+<span class="text-2xl font-display font-bold text-barber-gold">15€</span>
+</div>
+<div class="flex items-center">
+<span class="text-lg font-bold text-white uppercase tracking-wider">Rasage Traditionnel</span>
+<div class="price-dots"></div>
+<span class="text-2xl font-display font-bold text-barber-gold">25€</span>
+</div>
+<div class="flex items-center">
+<span class="text-lg font-bold text-white uppercase tracking-wider">Coupe + Barbe</span>
+<div class="price-dots"></div>
+<span class="text-2xl font-display font-bold text-barber-gold">38€</span>
+</div>
+<div class="flex items-center">
+<span class="text-lg font-bold text-white uppercase tracking-wider">Le Rituel Complet</span>
+<div class="price-dots"></div>
+<span class="text-2xl font-display font-bold text-barber-gold">55€</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+
+<section id="galerie" class="py-2 bg-barber-dark">
+<div class="grid grid-cols-2 md:grid-cols-4 gap-1">
+<div class="h-64 md:h-80 overflow-hidden reveal">
+<img src="https://images.unsplash.com/photo-1621605815971-fbc98d665033?q=80&w=800&auto=format&fit=crop" alt="[Image Barbier en action]" class="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-500 transform hover:scale-105">
+</div>
+<div class="h-64 md:h-80 overflow-hidden reveal" style="transition-delay: 100ms;">
+<img src="https://images.unsplash.com/photo-1599351431202-1e0f0137899a?q=80&w=800&auto=format&fit=crop" alt="[Image Fauteuil de barbier]" class="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-500 transform hover:scale-105">
+</div>
+<div class="h-64 md:h-80 overflow-hidden reveal" style="transition-delay: 200ms;">
+<img src="https://images.unsplash.com/photo-1503951914875-452162b0f3f1?q=80&w=800&auto=format&fit=crop" alt="[Image Outils de rasage]" class="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-500 transform hover:scale-105">
+</div>
+<div class="h-64 md:h-80 overflow-hidden reveal" style="transition-delay: 300ms;">
+<img src="https://images.unsplash.com/photo-1622286342621-4bd786c2447c?q=80&w=800&auto=format&fit=crop" alt="[Image Coupe homme]" class="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-500 transform hover:scale-105">
+</div>
+</div>
+</section>
+
+<section id="reservation" class="py-24 bg-barber-black relative overflow-hidden">
+<div class="absolute top-0 right-0 w-1/2 h-full bg-barber-dark transform skew-x-12 translate-x-32 hidden lg:block"></div>
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+<div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+<div class="reveal">
+<h2 class="text-barber-gold font-display tracking-[0.2em] uppercase text-sm font-bold mb-2">Passez à l'action</h2>
+<h3 class="text-4xl md:text-5xl font-display font-bold text-white uppercase tracking-tight mb-6">Prendre Rendez-vous</h3>
+<p class="text-gray-400 mb-10 font-light leading-relaxed">
+Évitez l'attente en réservant votre créneau directement en ligne. Sélectionnez votre prestation, votre barbier préféré et l'heure qui vous convient.
+</p>
+
+<div class="bg-barber-dark p-8 border border-barber-gray mb-8">
+<h4 class="font-display font-bold uppercase tracking-wider text-xl mb-4 border-b border-barber-gray pb-2 text-white">Nos Coordonnées</h4>
+<ul class="space-y-4 text-gray-400 font-light">
+<li class="flex items-center"><i class="fas fa-map-marker-alt text-barber-gold w-6 text-center mr-3"></i> 89 Avenue de la République, Paris</li>
+<li class="flex items-center"><i class="fas fa-phone text-barber-gold w-6 text-center mr-3"></i> 01 23 45 67 89</li>
+<li class="flex items-center"><i class="fas fa-envelope text-barber-gold w-6 text-center mr-3"></i> contact@maisonbarbier.fr</li>
+</ul>
+</div>
+<div class="flex gap-4">
+<a href="#" class="w-12 h-12 bg-barber-gray flex items-center justify-center rounded hover:bg-barber-gold hover:text-barber-black transition-colors text-white"><i class="fab fa-instagram text-xl"></i></a>
+<a href="#" class="w-12 h-12 bg-barber-gray flex items-center justify-center rounded hover:bg-barber-gold hover:text-barber-black transition-colors text-white"><i class="fab fa-facebook-f text-xl"></i></a>
+<a href="#" class="w-12 h-12 bg-barber-gray flex items-center justify-center rounded hover:bg-barber-gold hover:text-barber-black transition-colors text-white"><i class="fab fa-tiktok text-xl"></i></a>
+</div>
+</div>
+
+<div class="bg-barber-gray p-8 md:p-10 reveal shadow-2xl">
+<form onsubmit="event.preventDefault();" class="space-y-6">
+<div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+<div>
+<label class="block font-display tracking-widest uppercase text-xs text-gray-400 mb-2">Prénom & Nom</label>
+<input type="text" required class="w-full bg-barber-black border border-barber-dark px-4 py-3 text-white focus:outline-none focus:border-barber-gold transition-colors">
+</div>
+<div>
+<label class="block font-display tracking-widest uppercase text-xs text-gray-400 mb-2">Téléphone</label>
+<input type="tel" required class="w-full bg-barber-black border border-barber-dark px-4 py-3 text-white focus:outline-none focus:border-barber-gold transition-colors">
+</div>
+</div>
+<div>
+<label class="block font-display tracking-widest uppercase text-xs text-gray-400 mb-2">Prestation souhaitée</label>
+<select required class="w-full bg-barber-black border border-barber-dark px-4 py-3 text-white focus:outline-none focus:border-barber-gold transition-colors appearance-none">
+<option value="" disabled selected>Sélectionner un service</option>
+<option value="coupe">Coupe Classique ou Dégradé</option>
+<option value="barbe">Taille de Barbe / Rasage</option>
+<option value="complet">Coupe + Barbe</option>
+<option value="rituel">Le Rituel Complet</option>
+</select>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+<div>
+<label class="block font-display tracking-widest uppercase text-xs text-gray-400 mb-2">Date</label>
+<input type="date" required class="w-full bg-barber-black border border-barber-dark px-4 py-3 text-gray-400 focus:text-white focus:outline-none focus:border-barber-gold transition-colors">
+</div>
+<div>
+<label class="block font-display tracking-widest uppercase text-xs text-gray-400 mb-2">Heure</label>
+<select required class="w-full bg-barber-black border border-barber-dark px-4 py-3 text-white focus:outline-none focus:border-barber-gold transition-colors appearance-none">
+<option value="" disabled selected>Horaire</option>
+<option value="09:00">09:00</option>
+<option value="10:00">10:00</option>
+<option value="11:00">11:00</option>
+<option value="14:00">14:00</option>
+<option value="15:00">15:00</option>
+<option value="16:00">16:00</option>
+<option value="17:00">17:00</option>
+<option value="18:00">18:00</option>
+</select>
+</div>
+</div>
+<button type="submit" class="w-full bg-barber-gold text-barber-black font-display font-bold uppercase tracking-wider py-4 hover:bg-white transition-colors mt-4">
+Valider la réservation
+</button>
+</form>
+</div>
+</div>
+</div>
+</section>
+
+<footer class="bg-barber-black py-8 border-t border-barber-gray text-center">
+<div class="max-w-7xl mx-auto px-4 flex flex-col md:flex-row justify-between items-center">
+<div class="flex items-center gap-2 mb-4 md:mb-0">
+<i class="fas fa-cut text-barber-gold transform -rotate-45"></i>
+<span class="font-display font-bold uppercase tracking-widest text-white text-lg">Maison Barbier</span>
+</div>
+<p class="text-gray-500 text-sm font-light uppercase tracking-widest mb-4 md:mb-0">&copy; 2026 Maison Barbier.</p>
+<p class="text-gray-500 text-sm font-light uppercase tracking-widest">Design par <span class="text-barber-gold font-bold">Ton Nom</span></p>
+</div>
+</footer>
+
+<script>
+const navbar = document.getElementById('navbar');
+const mobileBtn = document.getElementById('mobile-btn');
+const mobileMenu = document.getElementById('mobile-menu');
+
+window.addEventListener('scroll', () => {
+if (window.scrollY > 50) {
+navbar.classList.add('scrolled');
+navbar.classList.remove('py-5');
+navbar.classList.add('py-3');
+} else {
+navbar.classList.remove('scrolled');
+navbar.classList.add('py-5');
+navbar.classList.remove('py-3');
+}
+});
+
+mobileBtn.addEventListener('click', () => {
+mobileMenu.classList.toggle('hidden');
+});
+
+mobileMenu.querySelectorAll('a').forEach(link => {
+link.addEventListener('click', () => {
+mobileMenu.classList.add('hidden');
+});
+});
+
+const reveals = document.querySelectorAll('.reveal');
+const revealOnScroll = new IntersectionObserver((entries, observer) => {
+entries.forEach(entry => {
+if (entry.isIntersecting) {
+entry.target.classList.add('active');
+observer.unobserve(entry.target);
+}
+});
+}, {
+threshold: 0.15,
+rootMargin: "0px 0px -50px 0px"
+});
+
+reveals.forEach(reveal => {
+revealOnScroll.observe(reveal);
+});
+</script>
+
+</body>
+</html>
