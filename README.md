@@ -31,7 +31,7 @@ Les technologies et bibliothèques utilisées dans ce projet ont été sélectio
 Pour visualiser le projet sur votre machine locale, aucune installation complexe n'est requise.
 
 1. Clonez ce dépôt sur votre machine locale :
-   git clone https://github.com/VOTRE-PSEUDO/portfolio.git
+   git clone git@github.com:Cyrell0/Cyrell0.git
 2. Naviguez dans le dossier du projet :
    cd portfolio
 3. Ouvrez le fichier `index.html` directement dans votre navigateur web, ou utilisez une extension comme Live Server sur VS Code pour une meilleure expérience de développement.
