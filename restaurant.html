@@ -38,6 +38,11 @@ background-size: cover;
 background-position: center;
 background-attachment: fixed;
 }
+@media (max-width: 768px) {
+.hero-bg {
+background-attachment: scroll;
+}
+}
 .reveal {
 opacity: 0;
 transform: translateY(40px);
@@ -139,7 +144,7 @@ Découvrir la carte
 <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
 <div class="order-2 lg:order-1 relative reveal">
-<img src="https://images.unsplash.com/photo-1583337130417-3346a1be7dee?q=80&w=800&auto=format&fit=crop" alt="[Image Chef cuisinant]" class="w-full h-[600px] object-cover rounded-sm">
+<img src="https://images.unsplash.com/photo-1583337130417-3346a1be7dee?q=80&w=800&auto=format&fit=crop" alt="Chef cuisinant en cuisine" class="w-full h-[600px] object-cover rounded-sm">
 <div class="absolute -bottom-8 -right-8 w-full h-full border-2 border-resto-gold rounded-sm -z-10 hidden md:block"></div>
 </div>
 <div class="order-1 lg:order-2 reveal lg:pl-10">
@@ -154,7 +159,7 @@ Chez L'Épicurien, nous croyons que la véritable gastronomie réside dans le re
 <p class="text-gray-600 mb-10 font-sans leading-relaxed">
 Dans un cadre intimiste et chaleureux, nous vous proposons une cuisine de l'instant, où les saveurs traditionnelles rencontrent des associations audacieuses.
 </p>
-<img src="https://upload.wikimedia.org/wikipedia/commons/f/fa/Signature_of_Gordon_Ramsay.png" alt="[Image Signature Chef]" class="h-12 opacity-80 mix-blend-multiply filter grayscale mb-4">
+<img src="https://upload.wikimedia.org/wikipedia/commons/f/fa/Signature_of_Gordon_Ramsay.png" alt="Signature du Chef Antoine Laurent" class="h-12 opacity-80 mix-blend-multiply filter grayscale mb-4">
 <p class="font-serif font-bold text-xl text-resto-dark">Chef Antoine Laurent</p>
 </div>
 </div>
@@ -222,6 +227,26 @@ Dans un cadre intimiste et chaleureux, nous vous proposons une cuisine de l'inst
 </div>
 </div>
 
+<div class="reveal">
+<h4 class="text-3xl font-serif font-bold text-center mb-10 text-resto-gold">Desserts</h4>
+<div class="space-y-8">
+<div class="menu-item-border pb-2">
+<div class="flex justify-between items-baseline mb-2">
+<h5 class="font-serif text-2xl font-bold">Moelleux au Chocolat Noir</h5>
+<span class="font-sans text-resto-gold font-bold">12€</span>
+</div>
+<p class="font-sans font-light text-gray-400 text-sm">Ganache coulante Valrhona, glace vanille de Madagascar, tuile croustillante au cacao.</p>
+</div>
+<div class="menu-item-border pb-2">
+<div class="flex justify-between items-baseline mb-2">
+<h5 class="font-serif text-2xl font-bold">Tarte Tatin aux Pommes</h5>
+<span class="font-sans text-resto-gold font-bold">10€</span>
+</div>
+<p class="font-sans font-light text-gray-400 text-sm">Pommes golden caramélisées, crème fraîche de Normandie, caramel au beurre salé.</p>
+</div>
+</div>
+</div>
+
 <div class="reveal text-center pt-8">
 <a href="#" class="btn-gold px-8 py-3 rounded-sm font-sans tracking-widest uppercase text-xs font-semibold inline-block">
 Voir la carte complète des vins
@@ -231,19 +256,19 @@ Voir la carte complète des vins
 </div>
 </section>
 
-<section id="galerie" class="py-2 bg-resto-light">
+<section id="galerie" class="bg-resto-light">
 <div class="grid grid-cols-2 md:grid-cols-4 gap-1">
 <div class="overflow-hidden group h-64 md:h-80 reveal">
-<img src="https://images.unsplash.com/photo-1414235077428-338989a2e8c0?q=80&w=800&auto=format&fit=crop" alt="[Image Plat]" class="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-700">
+<img src="https://images.unsplash.com/photo-1414235077428-338989a2e8c0?q=80&w=800&auto=format&fit=crop" alt="Plat gastronomique" class="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-700">
 </div>
 <div class="overflow-hidden group h-64 md:h-80 reveal" style="transition-delay: 100ms;">
-<img src="https://images.unsplash.com/photo-1550966871-3ed3cdb5ed0c?q=80&w=800&auto=format&fit=crop" alt="[Image Salle de restaurant]" class="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-700">
+<img src="https://images.unsplash.com/photo-1550966871-3ed3cdb5ed0c?q=80&w=800&auto=format&fit=crop" alt="Salle de restaurant L'Épicurien" class="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-700">
 </div>
 <div class="overflow-hidden group h-64 md:h-80 reveal" style="transition-delay: 200ms;">
-<img src="https://images.unsplash.com/photo-1544148103-0773bf10d330?q=80&w=800&auto=format&fit=crop" alt="[Image Vin]" class="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-700">
+<img src="https://images.unsplash.com/photo-1544148103-0773bf10d330?q=80&w=800&auto=format&fit=crop" alt="Sélection de vins" class="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-700">
 </div>
 <div class="overflow-hidden group h-64 md:h-80 reveal" style="transition-delay: 300ms;">
-<img src="https://images.unsplash.com/photo-1600891964092-4316c288032e?q=80&w=800&auto=format&fit=crop" alt="[Image Steak]" class="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-700">
+<img src="https://images.unsplash.com/photo-1600891964092-4316c288032e?q=80&w=800&auto=format&fit=crop" alt="Viande grillée" class="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-700">
 </div>
 </div>
 </section>
@@ -372,7 +397,7 @@ Confirmer la réservation
 <p class="font-serif text-2xl font-bold tracking-widest uppercase mb-4 md:mb-0">L'Épicurien</p>
 <p class="font-sans font-light text-xs text-gray-400 tracking-widest uppercase">&copy; 2026 L'Épicurien. Tous droits réservés.</p>
 <div class="font-sans font-light text-xs text-gray-500 mt-4 md:mt-0">
-Développé par <span class="text-resto-gold font-bold">Ton Nom</span>
+Développé par <span class="text-resto-gold font-bold">Cyrello Boutros</span>
 </div>
 </div>
 </footer>
@@ -418,5 +443,8 @@ revealOnScroll.observe(reveal);
 });
 </script>
 
+<a href="index.html" class="fixed bottom-6 left-6 z-50 flex items-center gap-2 bg-white text-resto-dark px-4 py-2 border border-gray-300 hover:border-resto-gold hover:text-resto-gold transition-all duration-300 font-sans uppercase tracking-wider text-xs shadow-xl rounded-sm">
+<i class="fas fa-arrow-left mr-1"></i> Portfolio
+</a>
 </body>
 </html>

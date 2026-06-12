@@ -39,6 +39,11 @@ background-size: cover;
 background-position: center;
 background-attachment: fixed;
 }
+@media (max-width: 768px) {
+.hero-bg {
+background-attachment: scroll;
+}
+}
 .pattern-bg {
 background-image: radial-gradient(#262626 1px, transparent 1px);
 background-size: 20px 20px;
@@ -162,7 +167,7 @@ Voir nos tarifs
 <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
 <div class="bg-barber-black p-8 border border-barber-gray hover:border-barber-gold transition-colors group reveal">
 <div class="w-16 h-16 bg-barber-gray flex items-center justify-center rounded mb-6 group-hover:bg-barber-gold transition-colors">
-<img src="https://api.iconify.design/ph/scissors-bold.svg?color=%23c5a059" alt="[Ciseaux]" class="w-8 h-8 group-hover:filter group-hover:brightness-0">
+<i class="fas fa-scissors text-2xl text-barber-gold group-hover:text-barber-black transition-colors"></i>
 </div>
 <h4 class="text-2xl font-display font-bold text-white uppercase tracking-wide mb-4">La Coupe</h4>
 <p class="text-gray-400 font-light leading-relaxed mb-6">Un diagnostic personnalisé suivi d'une coupe aux ciseaux ou à la tondeuse, adaptée à la morphologie de votre visage.</p>
@@ -255,19 +260,19 @@ Les tarifs incluent le diagnostic, le shampoing et les produits de coiffage haut
 </div>
 </section>
 
-<section id="galerie" class="py-2 bg-barber-dark">
+<section id="galerie" class="bg-barber-dark">
 <div class="grid grid-cols-2 md:grid-cols-4 gap-1">
 <div class="h-64 md:h-80 overflow-hidden reveal">
-<img src="https://images.unsplash.com/photo-1621605815971-fbc98d665033?q=80&w=800&auto=format&fit=crop" alt="[Image Barbier en action]" class="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-500 transform hover:scale-105">
+<img src="https://images.unsplash.com/photo-1621605815971-fbc98d665033?q=80&w=800&auto=format&fit=crop" alt="Barbier en action" class="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-500 transform hover:scale-105">
 </div>
 <div class="h-64 md:h-80 overflow-hidden reveal" style="transition-delay: 100ms;">
-<img src="https://images.unsplash.com/photo-1599351431202-1e0f0137899a?q=80&w=800&auto=format&fit=crop" alt="[Image Fauteuil de barbier]" class="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-500 transform hover:scale-105">
+<img src="https://images.unsplash.com/photo-1599351431202-1e0f0137899a?q=80&w=800&auto=format&fit=crop" alt="Fauteuil de barbier" class="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-500 transform hover:scale-105">
 </div>
 <div class="h-64 md:h-80 overflow-hidden reveal" style="transition-delay: 200ms;">
-<img src="https://images.unsplash.com/photo-1503951914875-452162b0f3f1?q=80&w=800&auto=format&fit=crop" alt="[Image Outils de rasage]" class="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-500 transform hover:scale-105">
+<img src="https://images.unsplash.com/photo-1503951914875-452162b0f3f1?q=80&w=800&auto=format&fit=crop" alt="Outils de rasage traditionnels" class="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-500 transform hover:scale-105">
 </div>
 <div class="h-64 md:h-80 overflow-hidden reveal" style="transition-delay: 300ms;">
-<img src="https://images.unsplash.com/photo-1622286342621-4bd786c2447c?q=80&w=800&auto=format&fit=crop" alt="[Image Coupe homme]" class="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-500 transform hover:scale-105">
+<img src="https://images.unsplash.com/photo-1622286342621-4bd786c2447c?q=80&w=800&auto=format&fit=crop" alt="Coupe homme moderne" class="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-500 transform hover:scale-105">
 </div>
 </div>
 </section>
@@ -356,7 +361,7 @@ Valider la réservation
 <span class="font-display font-bold uppercase tracking-widest text-white text-lg">Maison Barbier</span>
 </div>
 <p class="text-gray-500 text-sm font-light uppercase tracking-widest mb-4 md:mb-0">&copy; 2026 Maison Barbier.</p>
-<p class="text-gray-500 text-sm font-light uppercase tracking-widest">Design par <span class="text-barber-gold font-bold">Ton Nom</span></p>
+<p class="text-gray-500 text-sm font-light uppercase tracking-widest">Design par <span class="text-barber-gold font-bold">Cyrello Boutros</span></p>
 </div>
 </footer>
 
@@ -405,5 +410,8 @@ revealOnScroll.observe(reveal);
 });
 </script>
 
+<a href="index.html" class="fixed bottom-6 left-6 z-50 flex items-center gap-2 bg-barber-black text-barber-gold px-4 py-2 border border-barber-gold hover:bg-barber-gold hover:text-barber-black transition-all duration-300 font-display uppercase tracking-wider text-xs shadow-xl">
+<i class="fas fa-arrow-left mr-1"></i> Portfolio
+</a>
 </body>
 </html>
